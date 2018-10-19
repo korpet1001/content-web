@@ -20,6 +20,10 @@ if ('development' === app.get('env')) {
     console.log("=== Using production environment === ");
 }
 
+const appInsights = require("applicationinsights");
+appInsights.setup(config.appInsightKey);
+appInsights.start();
+
 // all environments
 app.set('port', 3000);
 app.set('views', path.join(__dirname, 'public'));
